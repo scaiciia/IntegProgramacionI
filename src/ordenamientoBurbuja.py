@@ -1,3 +1,4 @@
+# Funcion de ordenamiento por metodo burbuja
 def ordenamiento_burbuja(lista):
     n = len(lista)
     for i in range(n):

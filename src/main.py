@@ -6,6 +6,10 @@ from busquedaSecuencial import busqueda_secuencial
 from ordenamientoBurbuja import ordenamiento_burbuja
 from ordenamientoQuicksort import ordenamiento_quick
 
+"""
+    Generacion de la lista de estudiantes con sus respectivas notas.
+    Se generan n cantidad de estudiantes con nombres aleatorios y notas entre 0.0 y 10.0.
+"""
 def generar_estudiantes(n):
     nombres = [
         "Ana", "Luis", "Carlos", "María", "Jorge", "Sofía", "Pedro", "Valentina", "Martín", "Camila",
@@ -22,6 +26,10 @@ def generar_estudiantes(n):
     estudiantes = [(random.choice(nombres), round(random.uniform(0.0, 10.0), 1)) for _ in range(n)]
     return estudiantes
 
+"""
+    Función para buscar un estudiante en una lista.
+    Dependiendo de si la lista está ordenada o no, se utiliza búsqueda secuencial o binaria.
+"""
 def busqueda(lista, lista_ordenada):
     dato = input("Ingrese el nombre del estudiante a buscar: ")
     respuesta = None
@@ -31,6 +39,10 @@ def busqueda(lista, lista_ordenada):
         respuesta = busqueda_binaria(lista_ordenada, dato)
     return respuesta
 
+"""
+    Función para ordenar una lista de estudiantes.
+    Permite elegir entre dos métodos de ordenamiento: Burbuja (descendente) y Quicksort (ascendente).
+"""
 def ordenar(lista, lista_ordenada):
     while True:
         os.system('cls' if os.name == 'nt' else 'clear')
@@ -59,6 +71,7 @@ def ordenar(lista, lista_ordenada):
     
     return lista_ordenada
 
+# Programa principal
 n = 100  # Número de estudiantes a generar
 estudiantes = generar_estudiantes(n)
 lista_ordenada = []

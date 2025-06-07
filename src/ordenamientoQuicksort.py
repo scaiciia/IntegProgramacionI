@@ -1,3 +1,4 @@
+# Funcion de ordenamiento por metodo Quicksort
 def ordenamiento_quick(lista):
     if len(lista) <= 1:
         return lista

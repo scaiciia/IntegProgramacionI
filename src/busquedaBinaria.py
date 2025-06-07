@@ -1,3 +1,4 @@
+# Función para realizar una búsqueda binaria en una lista de tuplas ordenadas por el primer elemento de cada tupla.
 def busqueda_binaria(lista, objetivo):
     bajo = 0
     alto = len(lista) - 1
