@@ -34,15 +34,15 @@ def busqueda(lista, lista_ordenada):
     dato = input("Ingrese el nombre del estudiante a buscar: ")
     respuesta = None
     if (len(lista_ordenada) == 0):
-        inicio = time.time()
+        inicio = time.perf_counter()
         respuesta = busqueda_secuencial(lista, dato)
-        fin = time.time()
-        print(f"Demora: {fin - inicio:.6f} segundos")
+        fin = time.perf_counter()
+        print(f"Demora: {fin - inicio:.10f} segundos")
     else:
-        inicio = time.time()
+        inicio = time.perf_counter()
         respuesta = busqueda_binaria(lista_ordenada, dato)
-        fin = time.time()
-        print(f"Demora: {fin - inicio:.6f} segundos")
+        fin = time.perf_counter()
+        print(f"Demora: {fin - inicio:.10f} segundos")
     return respuesta
 
 """
@@ -59,16 +59,16 @@ def ordenar(lista, lista_ordenada):
         opcion = input("Ingrese su opción: ")
         
         if opcion == "1":
-            inicio = time.time()
+            inicio = time.perf_counter()
             lista_ordenada = ordenamiento_burbuja(lista)
-            fin = time.time()
-            print(f"Demora: {fin - inicio:.6f} segundos")
+            fin = time.perf_counter()
+            print(f"Demora: {fin - inicio:.10f} segundos")
             break
         elif opcion == "2":
-            inicio = time.time()
+            inicio = time.perf_counter()
             lista_ordenada = ordenamiento_quick(lista)
-            fin = time.time()
-            print(f"Demora: {fin - inicio:.6f} segundos")
+            fin = time.perf_counter()
+            print(f"Demora: {fin - inicio:.10f} segundos")
             break
         elif opcion == "3":
             break
@@ -98,6 +98,7 @@ while True:
             input("Presione Enter para continuar...")
         else:
             print("Estudiante no encontrado.")
+            input("Presione Enter para continuar...")
     elif opcion == "2":
         lista_ordenada = ordenar(estudiantes, lista_ordenada)
         input("Presione Enter para continuar...")
