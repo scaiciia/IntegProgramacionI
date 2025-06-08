@@ -63,6 +63,7 @@ def ordenar(lista, lista_ordenada):
             lista_ordenada = ordenamiento_burbuja(lista)
             fin = time.perf_counter()
             print(f"Demora: {fin - inicio:.10f} segundos")
+            input("Presione Enter para continuar...")
             for nombre, nota in lista_ordenada:
                 print(f"Nombre: {nombre}, Nota: {nota}")
             break
@@ -71,6 +72,7 @@ def ordenar(lista, lista_ordenada):
             lista_ordenada = ordenamiento_quick(lista)
             fin = time.perf_counter()
             print(f"Demora: {fin - inicio:.10f} segundos")
+            input("Presione Enter para continuar...")
             for nombre, nota in lista_ordenada:
                 print(f"Nombre: {nombre}, Nota: {nota}")
             break
@@ -81,7 +83,7 @@ def ordenar(lista, lista_ordenada):
     return lista_ordenada
 
 # Programa principal
-n = 100  # Número de estudiantes a generar
+n = 10000  # Número de estudiantes a generar
 estudiantes = generar_estudiantes(n)
 lista_ordenada = []
 while True:
