@@ -53,8 +53,8 @@ def ordenar(lista, lista_ordenada):
     while True:
         os.system('cls' if os.name == 'nt' else 'clear')
         print("Seleccione el método de ordenamiento:")
-        print("1. Descendente (Burbuja)")
-        print("2. Ascendente (Quicksort)")
+        print("1. Ascendente (Burbuja)")
+        print("2. Descendente (Quicksort)")
         print("3. Atrás")
         opcion = input("Ingrese su opción: ")
         
@@ -63,18 +63,21 @@ def ordenar(lista, lista_ordenada):
             lista_ordenada = ordenamiento_burbuja(lista)
             fin = time.perf_counter()
             print(f"Demora: {fin - inicio:.10f} segundos")
+            for nombre, nota in lista_ordenada:
+                print(f"Nombre: {nombre}, Nota: {nota}")
             break
         elif opcion == "2":
             inicio = time.perf_counter()
             lista_ordenada = ordenamiento_quick(lista)
             fin = time.perf_counter()
             print(f"Demora: {fin - inicio:.10f} segundos")
+            for nombre, nota in lista_ordenada:
+                print(f"Nombre: {nombre}, Nota: {nota}")
             break
         elif opcion == "3":
             break
         else:
             print("Opción no válida.")
-    
     return lista_ordenada
 
 # Programa principal
