@@ -34,9 +34,15 @@ def busqueda(lista, lista_ordenada):
     dato = input("Ingrese el nombre del estudiante a buscar: ")
     respuesta = None
     if (len(lista_ordenada) == 0):
+        inicio = time.time()
         respuesta = busqueda_secuencial(lista, dato)
+        fin = time.time()
+        print(f"Demora: {fin - inicio:.6f} segundos")
     else:
+        inicio = time.time()
         respuesta = busqueda_binaria(lista_ordenada, dato)
+        fin = time.time()
+        print(f"Demora: {fin - inicio:.6f} segundos")
     return respuesta
 
 """
